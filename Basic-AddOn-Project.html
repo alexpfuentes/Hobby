@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobby</title>
+    <style>
+        body {
+            background: radial-gradient(circle at 10% 20%, rgb(186, 190, 245) 0%, rgb(192, 192, 245) 33.1%, rgb(218, 203, 246) 90%);
+            text-align: center;
+            font-family: cursive
+        }
+
+        .theme-button {
+            display: block;
+            margin: 25px auto;
+            font-size: medium;
+            font-weight: bold;
+            color: rgb(135, 120, 253);
+            background: white;
+            padding: 8px 10px;
+            border: 1px solid rgb(135, 120, 253);
+            border-radius: 15px;
+            transition: all 150ms ease-in-out;
+        }
+
+        .theme-button:hover {
+            background: rgb(135, 120, 253);
+            color: white;
+            cursor: pointer;
+        }
+
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 15px;
+        }
+
+        h2 {
+            font-size: 35px;
+            margin: 25px;
+        }
+
+        .imageOne {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: all 150ms ease-in-out;
+            margin: 16px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgb(131, 131, 131);
+            ;
+        }
+
+        .imageOne:hover {
+            filter: contrast(100%);
+            transform: scale(1.2);
+        }
+
+        .grid {
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+        }
+
+        .grid img {
+            max-width: 100%;
+            border-radius: 5px;
+            transition: all 150ms ease-in-out;
+        }
+
+        .grid img:hover {
+            transform: scale(1.3);
+        }
+
+        p {
+            text-align: justify;
+            padding-top: 15px;
+        }
+
+        .buyButton {
+            display: block;
+            margin: 20px auto;
+            font-size: large;
+            font-weight: bold;
+            color: rgb(135, 120, 253);
+            background: white;
+            padding: 10px 15px;
+            border: 2px solid rgb(135, 120, 253);
+            border-radius: 10px;
+            transition: all 150ms ease-in-out;
+        }
+
+        .buyButton:hover {
+            background: rgb(135, 120, 253);
+            color: white;
+            cursor: pointer;
+        }
+
+        footer {
+            font-size: 18px;
+            margin: 15px;
+        }
+
+        .dark {
+            background: linear-gradient(45deg, rgb(50, 25, 79) -5%, rgb(122, 101, 149) 100%);
+        }
+
+        .dark .container {
+            background: #57385c;
+            color: white;
+        }
+
+        .dark button {
+            background: black;
+            color: white;
+            border-color: #57385c;
+        }
+
+        .dark button:hover {
+            background: white;
+            color: black;
+            border-color: #57385c;
+        }
+
+        .dark a {
+            color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="theme-button">
+        Change Theme
+    </button>
+    <div class="container">
+        <h1>
+            Fantasy Books📖
+        </h1>
+        <h2>
+            I love reading fantasy Books
+        </h2>
+        <img src="https://m.media-amazon.com/images/I/812aG7OjcXL._CLa%7C2531,2500%7C81e38VH4JFL.jpg,81CwDAxkQeL.jpg%7C0,0,1150,2500+1381,0,1150,2500+575,0,1381,2500_._SY300_.jpg"
+            alt="GhostGirl" class="imageOne">
+
+        <div class="grid">
+            <img src="https://m.media-amazon.com/images/I/51Ff8TJFbkL.jpg" alt="Harry Potter">
+            <img src="https://m.media-amazon.com/images/I/41RkmVgo55L.jpg" alt="Hunting Danielle">
+            <img src="https://m.media-amazon.com/images/I/41vSdUKhUHL.jpg" alt="VD">
+            <img src="https://m.media-amazon.com/images/I/51kfFS5-fnL._SX332_BO1,204,203,200_.jpg" alt="Lord">
+
+        </div>
+
+        <p>
+            Fantasy is a genre of speculative fiction involving magical elements, typically set in a fictional universe
+            and sometimes inspired by mythology and folklore. Its roots are in oral traditions, which then became
+            fantasy literature and drama.
+            <br />
+            <br />
+            Read more at <span>
+                <a href="https://en.wikipedia.org/wiki/Fantasy" target="_blank">Wikipedia</a>
+            </span>
+        </p>
+        <button class="buyButton">
+            Buy Books
+        </button>
+        <footer>
+            Coded by Alex Fuentes
+        </footer>
+    </div>
+    <script>
+        function changeTheme() {
+            let body = document.querySelector("body");
+
+            if (body.classList.contains("dark")) {
+                body.classList.remove("dark");
+            } else {
+                body.classList.add("dark");
+            }
+        }
+        let themeButton = document.querySelector(".theme-button");
+        themeButton.addEventListener("click", changeTheme);
+
+        function buyBooks() {
+            let name = prompt("What is yout name?");
+            let email = prompt("What is your email-address");
+            let genre = prompt("What kind of books do you like?");
+            alert("Thank you " + name + " ! " + "We will let you know when we get more " + genre + " Books")
+        }
+
+        let buyButton = document.querySelector(".buyButton");
+        buyButton.addEventListener("click", buyBooks);
+    </script>
+</body>
+
+</html>
